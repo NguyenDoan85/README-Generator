@@ -23,7 +23,7 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'Description of the project',
+        message: 'Description of the project:',
         validate: descriptionInput => {
             if (descriptionInput) {
                 return true;
@@ -37,7 +37,7 @@ const questions = [
     {
         type: 'input',
         name: 'installation',
-        message: 'Installation instruction!',
+        message: 'Installation instruction:',
         validate: installationInput => {
             if (installationInput) {
                 return true;
@@ -50,10 +50,10 @@ const questions = [
     // Usage information
     {
         type: 'input',
-        name: 'usage',
+        name: 'instruction',
         message: 'How do you use this project?',
-        validate: usageInput => {
-            if (usageInput) {
+        validate: instructionInput => {
+            if (instructionInput) {
                 return true;
             } else {
                 console.log('You need to provide information how to use this project!');
@@ -93,11 +93,11 @@ const questions = [
     {
         type: 'checkbox',
         name: 'licensing',
-        message: 'Choose a license for your project',
+        message: 'Choose a license for your project:',
         choices: ['GNU AGPLv3', 'GNU GPLv3',
-        'GNU LGPLv3', 'Mozilla Public License 2.0',
-        'Apache License 2.0', 'MIT License', 'Boost Software License 1.0',
-        'The Unlicense', 'None!'],
+            'GNU LGPLv3', 'Mozilla Public License 2.0',
+            'Apache License 2.0', 'MIT License', 'Boost Software License 1.0',
+            'The Unlicense', 'None!'],
         validate: licensingInput => {
             if (licensingInput) {
                 return true;
@@ -111,7 +111,7 @@ const questions = [
     {
         type: 'input',
         name: 'github',
-        message: 'Enter your GitHub Username',
+        message: 'Enter your GitHub Username:',
         validate: githubInput => {
             if (githubInput) {
                 return true;
@@ -127,7 +127,20 @@ const questions = [
         name: 'email',
         message: 'Would you like to include your email?',
     },
-];
+    // Question for owner
+    {
+        type: 'input',
+        name: 'questions',
+        message: 'Please list instructions for those who wish to contact you.',
+        validate: (nameInput) => {
+            if (nameInput) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+    }
+]
 
 
 // Function to write information to readme.md

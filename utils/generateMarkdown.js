@@ -41,6 +41,7 @@ let markdownTemplate =
     
 //title, badge, and description    
 `# ${data.title}
+
 ## Description
 ${data.description}
 ![badge](https://img.shields.io/badge/license-${licenseOption}-brightorange)
